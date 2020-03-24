@@ -1,0 +1,105 @@
+Nombre: Bilbao Cano Natalia                    Codigo: 40987
+
+Examen final - Base de datos
+
+Manufacturing
+
+============================================================================================================================
+
+1.
+
+a) Obtener el nombre del cliente y el numero de contacto de las ordenes enviadas por Bus.
+
+b) Obtener los nombres de los empleados que asistieron el '2018-09-29'.
+
+c) Mostrar alfabaticamente los usernames y passwords de todos los clientes.
+
+2.
+
+a) Mostrar los datos de la factura del cliente nc1
+
+b) Obtener el email de los empleados que tiene asistencia el mes de septiembre. 
+
+c) Obtener el username y password de los clientes que enviaron ordenes por Bus.
+
+3. 
+
+a) Obtener el nombre de los clientes que dieron un feedback bueno 'good'. 
+
+b) Obtener los nombres de los empleados que asistieron el '2018-09-27'.
+
+c) Obtener los clientes que sus correos terminen en .com y sus ordenes esten en estado 'Not ready'.
+
+4.
+
+a) Obtener el nombre del cliente y el item de las ordenes no enviadas por Bus.
+
+b) Mostrar alfabeticament los usernames de los clientes que no dieron feedback. 
+
+c) Contar el numero de material que provee el proveedor con correo gmail.
+
+=============================================================================================================================
+1.
+
+a) 
+
+SELECT name FROM clients;
+
+
+SELECT contactno, modeoftransport
+
+FROM delivery
+
+where modeoftransport like 'bus%'
+
+b) 
+
+SELECT empusername, date
+
+FROM attendance
+
+where date like '2018-09-29'
+
+
+c) 
+
+SELECT username, password
+
+FROM users
+
+ORDER BY username ASC;
+
+2.
+a)
+b)
+c)
+
+3.
+a)
+b)
+
+SELECT empusername, date
+
+FROM attendance
+
+where date like '2018-09-27'
+
+c)
+
+SELECT username, name, mail
+
+FROM clients
+
+where mail like '%.com'
+
+
+SELECT clientusername, status
+
+FROM orders
+
+where status like 'Not ready'
+
+4.
+a)
+b)
+c)
